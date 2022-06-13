@@ -10,8 +10,8 @@ public class Usuario extends Persona {
     }
 
     @Override
-    public void send(String msg) {
-        oficinasChat.send(msg, this);
+    public void send(String msg, String nombre) {
+        oficinasChat.send(msg, this, nombre);
     }
 
     @Override

@@ -16,8 +16,9 @@ public abstract class Persona {
         return nombre;
     }
 
-    public Persona setNombre(String nombre) {
+    public Persona setNombre(String nombre, String ci) {
         this.nombre = nombre;
+        this.ci = ci;
         return this;
     }
 
@@ -30,6 +31,6 @@ public abstract class Persona {
         return this;
     }
 
-    public abstract void send(String msg);
+    public abstract void send(String msg, String nombre);
     public abstract void received(String msg);
 }

@@ -18,17 +18,18 @@ public class OficinasChat implements IOficinasChat {
         Usuario emisor = (Usuario) persona;
         if(destino.equals("Todos")){
             for(Usuario usuario:personasOficinasChat){
-                usuario.received(msg);
+                if(emisor.getCi() != usuario.getCi()) {
+                    usuario.received(msg);
+                }
             }
         }else{
             for(Usuario usuario:personasOficinasChat){
-                if(!usuario.getCi().equals(emisor.getCi())) {
-                    if (destino.equals(usuario.getNombre()) ) {
-                        usuario.received(msg);
-                    }
+                if (destino.equals(usuario.getNombre()) ) {
+                    usuario.received(msg);
                 }
             }
         }
-
     }
+
+
 }
